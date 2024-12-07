@@ -268,10 +268,10 @@
               left: 50%; /* Center horizontally */
               transform: translateX(-50%); /* Ensure the title is perfectly centered */
               text-align: center;
-              color: #ebe8ea;
+              color: #e1e1e1;
               font-family:cursive;
               font-size: 4.5rem;
-              text-shadow: 2px 2px 5px rgba(87, 78, 2, 0.892);
+              text-shadow: 3px 3px 6px rgba(60, 0, 40, 0.892);
               z-index: 0; /* Ensure the text is above other content */
               margin-top: 0;
               white-space: nowrap; /* Prevents line break if not needed */
