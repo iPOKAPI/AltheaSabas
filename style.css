@@ -110,28 +110,181 @@
             text-align: center;
             color: white;
         }
-        /* Hero Banner */
-        .hero-banner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; /* Full-screen height */
-            background: linear-gradient(135deg, #ff1493, #ffa07a, #ffd1dc); /* Enhanced gradient */
-            background-size: 400% 400%; /* Create a smooth animation effect */
-            animation: gradientShift 10s ease infinite; /* Animate the gradient */
-            color: white;
+        .header {
+            position: relative;
+            height: 100vh; 
+            overflow: hidden; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+          }
+          .CoverPhoto {
+            width: 100%;
+            height: 100%; 
+            object-fit: cover; 
+            position: absolute; 
+            top: 0;
+            left: 0;
+            z-index: -2; 
+          }
+          .logo {
+              position: absolute;
+              left: 44%;
+              transform: translateX(-50%); 
+              display: flex; 
+              background: none; 
+              margin: 0; 
+              mix-blend-mode:multiply;
+              width: 10%;
+              top: 10%;
+          }
+          .circle{
+              position: absolute;
+              left: 44%;
+              transform: translateX(-50%); 
+              display: flex; 
+              background: none; 
+              margin: 0; 
+              top: 10%;
+              width: 10%;
+              border-radius: 50%;
+          }
+          .logo1 {
+              position: absolute;
+              right: 33.9%;
+              transform: translateX(-50%); 
+              display: flex; 
+              background: none; 
+              margin: 0; 
+              top: 10%;
+              mix-blend-mode:multiply;
+              width: 10%;
+          }
+          .circle1{
+              position: absolute;
+              right: 33.9%;
+              transform: translateX(-50%); 
+              display: flex; 
+              background: none; 
+              margin: 0; 
+              top: 10%;
+              width: 10%;
+              border-radius: 50%;
+          }
+          .cnu-text {
+              position: absolute;
+              left: 50%; /* Centers horizontally */
+              top: 32.5%; /* Position 10% up from the bottom */
+              transform: translateX(-50%); /* Perfect horizontal centering */
+              display: block; /* Enables flexbox properties */
+              justify-content: center; /* Center content horizontally */
+              align-items: center; /* Center content vertically (if needed) */
+              margin: 0;
+              color: #1e1e1e; /* Optional: Set text color */
+              font-size: 1.2rem; /* Adjust font size */
+              text-align: center; /* Center-align text */
+              text-transform: capitalize;
+              font-weight: bold;
+              line-height: 150%;
+              text-shadow: #fff9be 2px 2px 5px;
+              }
+          .corner{
+              position: absolute;
+              bottom: 0;
+              background: none; 
+              margin: 0; 
+              width: 100vw;
+              height: 18%;
+              mix-blend-mode:multiply;
+              z-index: 0;
+          }
+          .header::before {
+            content: ''; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f7de32;
+            opacity: 10%; 
+          }
+          
+          .header h1 {
+              position: absolute;
+              top: 50%; /* Position the title a bit down from the top */
+              left: 50%; /* Center horizontally */
+              transform: translateX(-50%); /* Ensure the title is perfectly centered */
+              text-align: center;
+              color: #f7f8eb;
+              font-family:'CustomCalligraphy',cursive;
+              font-size: 4.5rem;
+              text-shadow: 2px 2px 5px rgba(87, 78, 2, 0.892);
+              z-index: 0; /* Ensure the text is above other content */
+              margin-top: 0;
+              white-space: nowrap; /* Prevents line break if not needed */
+              max-width: 90vw; /* Prevents overflow, limits the width */
+              overflow: hidden; /* Prevents any text overflow */
+          }
+          .name{
+            position:absolute;
+            bottom: 3%; /* Position the title a bit down from the top */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Ensure the title is perfectly centered */
             text-align: center;
-            font-family: 'Poppins', sans-serif; /* Custom font from Google Fonts */
-            padding: 0 1rem; /* Add spacing for smaller screens */
-            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.2); /* Add depth with shadow */
-        }
-        header h1 {
-            font-size: 3.4rem; /* Large, bold text */
-            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4); /* Add depth to the text */
-            line-height: 1.2;
-            max-width: 80%; /* Limit the width for readability */
-            margin: 0 auto; /* Center the text block */
-        }
+            color: #030303;
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 1rem;
+            text-shadow: 1px 1px 5px rgb(255, 255, 255);
+            z-index: 0; /* Ensure the text is above other content */
+            margin-top: 0;
+            white-space: nowrap; /* Prevents line break if not needed */
+          }
+          
+          /* Mobile View Adjustments */
+          @media only screen and (max-width: 768px) {
+            .logo, .logo1 {
+              width: 15%; /* Increase logo size on mobile */
+              top: 15%;
+            }
+            .logo{
+              left: 42%;
+            }
+            .logo1{
+              right: 26%;
+            }
+          
+            .circle, .circle1 {
+              width: 15%;
+              top: 15%;
+            }
+          
+            .circle{
+              left: 42%;
+            }
+            .circle1{
+              right: 26%;
+            }
+            .cnu-text {
+              font-size: 0.6rem; /* Smaller font size for mobile */
+              top: 26%;
+              left: 50%;
+            }
+          
+            .name {
+              font-size: 0.9rem; /* Smaller font size for mobile */
+              bottom: 5%;
+            }
+          
+            .corner {
+              height: 25%; /* Adjust corner height for mobile */
+            }
+          
+            .header h1 {
+              font-size: 2.1rem; /* Adjust header font size for mobile */
+              top: 40%;
+            }
+          }
         @keyframes txt {
             0% {
                 background-position-x: 0; /* Start position */
