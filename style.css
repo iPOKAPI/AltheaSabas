@@ -20,55 +20,85 @@
                 background-position-x: 10000px; /* End position */
             }
         }
-
-       /* Navigation Bar */
+/* General Navbar Styles */
 .navbar {
-    backdrop-filter: blur(10px); /* Blur effect for a frosted glass look */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Slightly deeper shadow for better separation */
-    background: linear-gradient(90deg, rgba(255, 20, 147, 0.8), rgba(255, 105, 180, 0.8)); /* Gradient for a modern look */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for separation */
-    position: fixed; /* Fix the navbar at the top */
-    top: 0; /* Align to the top */
-    width: 100%; /* Full width */
-    z-index: 1000; /* Keep it above other content */
-    display: flex; /* Flexbox for aligning items */
-    justify-content: space-between; /* Spread items across the navbar */
-    align-items: center; /* Center items vertically */
-    padding: 0.5rem 1.5rem; /* Spacing inside the navbar */
-    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
-    overflow: hidden; /* Prevent content overflow */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 20, 147, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
-.navbar:hover {
-    background: linear-gradient(90deg, rgba(255, 20, 147, 0.9), rgba(255, 105, 180, 0.9)); /* Slightly brighter hover effect */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Enhance shadow on hover */
+.navbar-brand a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* Navigation Links */
-.navbar a {
-    color: white; /* White text for contrast */
-    text-decoration: none; /* Remove underline */
-    font-size: 1rem; /* Base font size */
-    padding: 0.5rem 1rem; /* Add padding for better clickability */
-    border-radius: 5px; /* Rounded corners */
-    transition: background 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+.navbar-links {
+    display: flex;
+    gap: 1rem;
 }
 
-.navbar a:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Highlight link with subtle white background */
-    color: #ff1493; /* Matching hover text color */
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
 }
 
-/* Responsive Design */
+.navbar-links a:hover {
+    color: #ffddf4;
+}
+
+/* Burger Menu for Mobile */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    background-color: white;
+    height: 3px;
+    width: 25px;
+    border-radius: 2px;
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Stack items vertically on small screens */
-        padding: 1rem; /* Adjust padding */
+    .burger-menu {
+        display: flex;
     }
 
-    .navbar a {
-        font-size: 0.9rem; /* Slightly smaller text on small screens */
-        padding: 0.7rem 1rem; /* Adjust padding for smaller devices */
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(255, 20, 147, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-links a {
+        padding: 0.5rem 0;
+        font-size: 1.2rem;
+    }
+
+    .navbar-links.show {
+        display: flex;
     }
 }
 
