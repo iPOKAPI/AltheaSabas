@@ -417,24 +417,28 @@
             background-color: #ff1493;
         }
 
+     
         /* Seminars and Certificates Section */
         .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+          display: flex;
+          flex-wrap: nowrap; /* Ensures images stay in  line without wrapping */
+          gap: 10px; /* Spacing between images */
+          padding: 20px;
+          justify-content: space-evenly;
+          overflow-x: auto; /* Adds horizontal scroll if needed */
         }
 
         .gallery img {
-            width: 200px;
-            height: 150px;
-            margin: 10px;
-            border-radius: 8px;
-            transition: 0.3s;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+          scroll-snap-align: start;
+          width: 300px; /* Adjust size as needed */
+          height: 200px;
+          border-radius: 8px;
+          transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .gallery img:hover {
-            transform: scale(1.1);
+          transform: scale(1.05);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* Classroom Observations Section */
